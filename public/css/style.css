@@ -1,6 +1,28 @@
-.button-Container {
+#start-button, #leaderboard-button {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 50px;
+}
+
+#start-button {
+    margin-top: 300px;
+}
+
+
+nav {
+    padding: 0px 0px 0px 20px;
+}
+
+body {
+    background: hsla(358, 26%, 79%, 1);
+
+background: radial-gradient(circle, hsla(358, 26%, 79%, 1) 0%, hsla(187, 97%, 29%, 1) 40%, hsla(356, 53%, 57%, 1) 100%);
+
+background: -moz-radial-gradient(circle, hsla(358, 26%, 79%, 1) 0%, hsla(187, 97%, 29%, 1) 40%, hsla(356, 53%, 57%, 1) 100%);
+
+background: -webkit-radial-gradient(circle, hsla(358, 26%, 79%, 1) 0%, hsla(187, 97%, 29%, 1) 40%, hsla(356, 53%, 57%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#D8BDBE", endColorstr="#028090", GradientType=1 );
 }
