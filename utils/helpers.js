@@ -1,0 +1,3 @@
+//handlebars helpers
+
+module.exports = {}
