@@ -2,5 +2,41 @@
     {
         "user_id": 1,
         "score": 500
+    },
+    {
+        "user_id": 2,
+        "score": 500
+    },
+    {
+        "user_id": 3,
+        "score": 500
+    },
+    {
+        "user_id": 4,
+        "score": 500
+    },
+    {
+        "user_id": 5,
+        "score": 500
+    },
+    {
+        "user_id": 6,
+        "score": 500
+    },
+    {
+        "user_id": 7,
+        "score": 500
+    },
+    {
+        "user_id": 8,
+        "score": 500
+    },
+    {
+        "user_id": 9,
+        "score": 500
+    },
+    {
+        "user_id": 10,
+        "score": 500
     }
 ]
