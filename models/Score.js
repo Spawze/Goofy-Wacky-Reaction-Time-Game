@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize')
-const sequelizeConnection = require('../config/connection')
+const sequelize = require('../config/connection')
 
 class Score extends Model {}
 
@@ -25,7 +25,7 @@ Score.init(
         }
     },
     {
-        sequelizeConnection,
+        sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
