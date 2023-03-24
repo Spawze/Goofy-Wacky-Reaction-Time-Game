@@ -18,7 +18,7 @@ router.post('/', async (req, res)=>{
             req.session.user_id = userData.id
             req.session.logged_in = true
 
-            req.status(200).json(userData)
+            res.status(200).json(userData)
         })
     } catch (error) {
         
@@ -33,7 +33,7 @@ password
 */
 router.post('/login', async (req, res)=>{
     try {
-        const userData = await User.findOne({where: {email: req.body.username}})
+        const userData = await User.findOne({where: {username: req.body.username}})
 
         
         if(!userData) {
@@ -51,6 +51,7 @@ router.post('/login', async (req, res)=>{
         }
         
         //Save session as logged in and return user data to client
+        console.log("Wow")
         req.session.save(()=>{
             req.session.user_id = userData.id;
             req.session.logged_in = true;
