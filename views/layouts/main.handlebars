@@ -21,8 +21,8 @@
       <a href="/" class="brand-logo">It's Reaction Time</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         {{!-- TODO: Add logic for log in and log out buttons, and add hrefs --}}
-        <li><a href="">Log In</a></li>
-        <li><a href="">Log Out</a></li>
+        <li><a href="" >Log In</a></li>
+        <li><a id="logout-button">Log Out</a></li>
         <li><a href="#how-to-play" class=" btn modal-trigger">How To Play</a></li>
       </ul>
     </div>
@@ -34,6 +34,9 @@
   <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
   <script src="/js/homepage.js"></script>
   <script type="text/javascript" src="/js/materialize.min.js"></script>
+
+  {{!-- maybe only make this script render if logged in, in the future --}}
+  <script src="/js/logout.js"></script>
 </body>
 
 </html>

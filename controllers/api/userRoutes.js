@@ -1,8 +1,6 @@
 const router = require('express').Router()
 const { route } = require('.');
 const {User} = require('../../models')
-//TODO add authorization to make sure user is logged in
-
 
 //create a new user
 //in body needs:
@@ -34,7 +32,6 @@ password
 router.post('/login', async (req, res)=>{
     try {
         const userData = await User.findOne({where: {username: req.body.username}})
-
         
         if(!userData) {
             //console.log("No matching username")
@@ -76,7 +73,7 @@ router.post('/logout', async (req, res)=>{
             })
         } else {
             //return 404 if the user tries to log out while logged out. (shouldn't be possible)
-            res.status(404).end()
+            res.status(404).json({message: "Test"}).end()
         }
         
     } catch (error) {
