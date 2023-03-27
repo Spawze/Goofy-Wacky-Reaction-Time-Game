@@ -13,7 +13,10 @@ if (process.env.JAWSDB_URL) {
     {
       host: 'localhost',
       dialect: 'mysql',
-      port: 3306
+      port: 3306,
+
+      //this to make it so sequelize doesn't spam console with logs
+      logging: false
     }
   );
 }
