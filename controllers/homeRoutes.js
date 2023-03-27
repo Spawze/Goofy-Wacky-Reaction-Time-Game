@@ -9,6 +9,15 @@ router.get('/', async (req, res) => {
     }
 })
 
+router.get('/login', (req, res) => {
+    if (req.session.logged_in) {
+        res.redirect('/')
+        return;
+    }
+
+    res.render('login')
+});
+
 router.get('/leaderboard', async (req, res) => {
     try {
         //get all score data, include username associated, and sort by descending
