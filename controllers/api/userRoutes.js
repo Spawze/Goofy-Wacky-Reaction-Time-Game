@@ -1,5 +1,4 @@
 const router = require('express').Router()
-const { route } = require('.');
 const {User} = require('../../models')
 
 //create a new user
@@ -48,7 +47,6 @@ router.post('/login', async (req, res)=>{
         }
         
         //Save session as logged in and return user data to client
-        console.log("Wow")
         req.session.save(()=>{
             req.session.user_id = userData.id;
             req.session.logged_in = true;
@@ -73,7 +71,7 @@ router.post('/logout', async (req, res)=>{
             })
         } else {
             //return 404 if the user tries to log out while logged out. (shouldn't be possible)
-            res.status(404).json({message: "Test"}).end()
+            res.status(404).json({message: "User already logged out."}).end()
         }
         
     } catch (error) {
