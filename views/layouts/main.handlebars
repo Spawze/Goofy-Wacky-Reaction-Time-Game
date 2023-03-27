@@ -20,9 +20,8 @@
     <div class="nav-wrapper">
       <a href="/" class="brand-logo">It's Reaction Time</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        {{!-- TODO: Add logic for log in and log out buttons, and add hrefs --}}
         {{#if logged_in}}
-        <li><a href="">Log Out</a></li>
+        <li><a id="logout-button">Log Out</a></li>
         {{else}}
         <li><a href="/login">Log In</a></li>
         {{/if}}
@@ -37,6 +36,9 @@
   <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
   <script src="/js/homepage.js"></script>
   <script type="text/javascript" src="/js/materialize.min.js"></script>
+
+  {{!-- maybe only make this script render if logged in, in the future --}}
+  <script src="/js/logout.js"></script>
 </body>
 
 </html>
