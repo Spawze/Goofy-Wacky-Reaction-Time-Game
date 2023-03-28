@@ -6,6 +6,7 @@ const scoreEl = $('#score')
 let gameStarted = false;
 let canClickSquare = false;
 let fault = false
+let tooLate = false
 let startTime
 let clickTime
 let score
@@ -29,6 +30,7 @@ function startGame() {
 
 function squareClick() {
 
+
     if (gameStarted) {
         if (canClickSquare && !fault) {
 
@@ -37,13 +39,16 @@ function squareClick() {
             console.log(clickTime)
 
             score = clickTime - startTime
+            if (score > 1500) {
+                tooLate = true
+                scoreEl.text("Too late!")
+            } else {
+                console.log("Your score: " + score)
 
-            console.log("Your score: " + score)
-
-            scoreEl.text(score)
+                scoreEl.text(score)
+            }
         } else {
             fault = true
-            console.log("Fault!")
             scoreEl.text("You clicked too early!")
         }
     }
@@ -56,7 +61,7 @@ function squareClick() {
 }
 
 function submitScore() {
-    if (!fault) {
+    if (!fault || !tooLate) {
         if (score) {
             $.post('/api/score/', { score: score }, (response) => {
                 document.location.replace('/leaderboard')
