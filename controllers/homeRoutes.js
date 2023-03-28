@@ -36,10 +36,6 @@ router.get('/leaderboard', async (req, res) => {
         //clean data
         const scoreData = scoreDataRaw.map((score) => score.get({ plain: true }))
 
-        console.log(scoreData)
-
-
-
         res.render('leaderboard', { scoreData })
     } catch (error) {
         res.status(500).json(error);
