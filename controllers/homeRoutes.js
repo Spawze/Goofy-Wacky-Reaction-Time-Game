@@ -1,9 +1,10 @@
 const router = require('express').Router();
 const { User, Score } = require('../models')
 
+
 router.get('/', async (req, res) => {
     try {
-        res.render('homepage', {logged_in: req.session.logged_in})
+        res.render('homepage', { logged_in: req.session.logged_in })
     } catch (error) {
         res.status(500).json(error);
     }
@@ -32,18 +33,26 @@ router.get('/leaderboard', async (req, res) => {
                 ['score', 'ASC']
             ]
         })
-
         //clean data
-        const scoreData = scoreDataRaw.map((score) => score.get({plain: true}))
+        const scoreData = scoreDataRaw.map((score) => score.get({ plain: true }))
 
         console.log(scoreData)
 
-        
 
-        res.render('leaderboard', {scoreData})
+
+        res.render('leaderboard', { scoreData })
     } catch (error) {
         res.status(500).json(error);
     }
-})
+});
+
+router.get('/game', async (req, res) => {
+    try {
+
+        res.render('game', {})
+    } catch (error) {
+        res.status(500).json(error);
+    }
+});
 
 module.exports = router;
