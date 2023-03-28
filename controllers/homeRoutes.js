@@ -48,8 +48,12 @@ router.get('/leaderboard', async (req, res) => {
 
 router.get('/game', async (req, res) => {
     try {
-
-        res.render('game', {})
+        if(req.session.logged_in){
+            res.render('game', {logged_in: req.session.logged_in})
+        }else{
+            res.redirect('login')
+        }
+        
     } catch (error) {
         res.status(500).json(error);
     }
