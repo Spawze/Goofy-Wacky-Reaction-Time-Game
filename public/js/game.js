@@ -44,6 +44,7 @@ function squareClick() {
         } else {
             fault = true
             console.log("Fault!")
+            scoreEl.text("You clicked too early!")
         }
     }
 
@@ -55,15 +56,18 @@ function squareClick() {
 }
 
 function submitScore() {
-    if (score) {
-        $.post('/api/score/', { score: score }, (response) => {
-            console.log(response)
-        })
-            .fail((response) => {
-                console.log(response)
+    if (!fault) {
+        if (score) {
+            $.post('/api/score/', { score: score }, (response) => {
+                document.location.replace('/leaderboard')
             })
+                .fail((response) => {
+                    console.log(response)
+                })
+        }
+    } else {
+        document.location.reload()
     }
-
 }
 
 

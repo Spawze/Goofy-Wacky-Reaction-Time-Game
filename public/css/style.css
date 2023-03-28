@@ -27,3 +27,23 @@ body {
 
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#D8BDBE", endColorstr="#028090", GradientType=1);
 }
+
+.col.s12.center-align {
+    font-size: 30px;
+}
+
+.col.s13.center-align {
+    font-size: 30px;
+    position: absolute;
+    bottom: 10px;
+    right: 25%;
+    left: 25%;
+    border-style: solid;
+    border-width: 5px;
+    background-color: rgba(240, 248, 255, 0.384);
+
+}
+
+#submit-button.btn.waves-effect.waves-light {
+    bottom: 10px;
+}

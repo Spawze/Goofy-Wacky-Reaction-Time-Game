@@ -36,7 +36,7 @@ router.get('/leaderboard', async (req, res) => {
         //clean data
         const scoreData = scoreDataRaw.map((score) => score.get({ plain: true }))
 
-        res.render('leaderboard', { scoreData })
+        res.render('leaderboard', { scoreData , logged_in: req.session.logged_in})
     } catch (error) {
         res.status(500).json(error);
     }
