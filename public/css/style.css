@@ -44,6 +44,7 @@ body {
 
 }
 
-#submit-button.btn.waves-effect.waves-light {
+#submit-button,
+#reset-button {
     bottom: 10px;
 }
