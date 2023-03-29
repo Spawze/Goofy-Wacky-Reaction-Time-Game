@@ -1,7 +1,9 @@
 const startButton = $('#game-start-button')
 const gameSquare = $('#red-square')
 const submitButton = $('#submit-button')
+const resetButton = $('#reset-button')
 const scoreEl = $('#score')
+const getReadyText = $('#get-ready')
 
 let gameStarted = false;
 let canClickSquare = false;
@@ -13,15 +15,17 @@ let score
 
 
 function startGame() {
-    //time range that the square can turn green is between 2 and 8 seconds
+    
     startButton.hide()
+    getReadyText.show()
+    //time range that the square can turn green is between 2 and 8 seconds
     const randomDelay = (Math.floor(Math.random() * 6000)) + 2000
     gameStarted = true;
     setTimeout(() => {
 
         canClickSquare = true
         gameSquare.css('background-color', 'green')
-
+        getReadyText.text("Click!")
         startTime = Date.now()
         console.log(startTime)
     }, randomDelay)
@@ -39,10 +43,13 @@ function squareClick() {
             console.log(clickTime)
 
             score = clickTime - startTime
-            if (score > 1500) {
+            if (score > 1000) {
                 tooLate = true
                 scoreEl.text("Too late!")
-            } else {
+            } else if(score < 100){
+                fault = true
+                scoreEl.text("Impossible score! You guessed!")
+            }else {
                 console.log("Your score: " + score)
 
                 scoreEl.text(score)
@@ -61,7 +68,7 @@ function squareClick() {
 }
 
 function submitScore() {
-    if (!fault || !tooLate) {
+    if (!fault && !tooLate) {
         if (score) {
             $.post('/api/score/', { score: score }, (response) => {
                 document.location.replace('/leaderboard')
@@ -75,7 +82,12 @@ function submitScore() {
     }
 }
 
+function resetGame(){
+    document.location.reload()
+}
+
 
 gameSquare.on('mousedown', squareClick)
 startButton.on('click', startGame)
 submitButton.on('click', submitScore)
+resetButton.on('click', resetGame)
