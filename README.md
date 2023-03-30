@@ -2,7 +2,7 @@
 
 ## About
 ___________________________________
-This project is a reaction game, how fast are you? This in an app that tests your reaction time by having you click the screen as soon as you see the square turn green! This application was built with *add all stuff here*
+This project is a reaction time game, how fast are you? This app tests your reaction time by generating a red square and having you click it as soon as you see the square turn green. 
 
 ### Deployed URL
 
@@ -10,7 +10,8 @@ This project is a reaction game, how fast are you? This in an app that tests you
 
 ## Summary 
 ___________________________________
-This application provides users the ability to create their own personal accounts using a username and password - Having your own account means you're able to save your personal scores without having anyone mess them up! Once the user creates an account and logs in, they are able to play a game of reaction time. The app generates a red block and then randomly changes color to green, as soon as it changes color, you click the block and the app will track how fast you clicked it. The application will save user information a database and use that to display it in the leaderboards.
+This application provides users the ability to create their own personal accounts using a username and password, this password is kept secure by using bcrypt to hash and authenticate - Having your own account means you're able to save your personal scores without having anyone mess them up! Once the user creates an account and logs in, they are able to play a game of reaction time. The app generates a red block and then randomly changes color to green, as soon as it changes color, you click the block and the app will track how fast you clicked it. The application will save user information a database and use that to display it in the leaderboards. 
+This app uses the MVC architecture for structure and utilizes Node JS and Express JS for our server, routes, and to generate our views.
 
 ## User Story
 ____________________________________________________

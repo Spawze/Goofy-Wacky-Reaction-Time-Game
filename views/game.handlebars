@@ -16,12 +16,15 @@
 <div id="game-container" class="container"></div>
 <div class="col s12 center-align">
     <div id="square" class="red"></div>
-    <p>Click the square as soon as it turns green!</p>
-    <button id="game-start-button" class="btn waves-effect waves-light">Play</button>
-    <button id="submit-button" class="btn waves-effect waves-light">Submit</button>
-    <p>Your reaction time: <span id="score"></span></p>
+    <p>Click the square as soon as it turns <span style="color:rgb(134, 255, 134)">GREEN</span>!</p>
+    <p id="get-ready" hidden>Get ready!</p>
+    <button id="game-start-button" class="btn waves-effect waves-light"><i class="material-icons right">play_circle_outline</i>Play</button>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-<script src="./js/game.js"></script>
-
+<div id="score-container" class="container">
+<div class="col s13 center-align">
+    <p>Your reaction time: <span id="score">?</span></p>
+    <button id="submit-button" class="btn waves-effect waves-light">Submit</button>
+    <button id="reset-button" class="btn waves-effect waves-light">Reset</button>
+</div>
+</div>

@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Score } = require('../models')
+const _ = require('lodash')
 
 
 router.get('/', async (req, res) => {
@@ -23,6 +24,8 @@ router.get('/leaderboard', async (req, res) => {
     try {
         //get all score data, include username associated, and sort by descending
         const scoreDataRaw = await Score.findAll({
+
+            distinct: true,
             include: [
                 {
                     model: User,
@@ -31,16 +34,20 @@ router.get('/leaderboard', async (req, res) => {
             ],
             order: [
                 ['score', 'ASC']
-            ]
+            ],
         })
         //clean data
         const scoreData = scoreDataRaw.map((score) => score.get({ plain: true }))
 
-        console.log(scoreData)
+        //filter data, using the lodash library, to exclude duplicate user id's
+        const scoreDataFiltered = _.uniqBy(scoreData, 'user_id')
+        
+        //cut the filtered data to only have 5 entries
+        const scoreDataCut = scoreDataFiltered.slice(0, 15)
 
 
+        res.render('leaderboard', { scoreData: scoreDataCut, logged_in: req.session.logged_in })
 
-        res.render('leaderboard', { scoreData })
     } catch (error) {
         res.status(500).json(error);
     }
@@ -48,15 +55,16 @@ router.get('/leaderboard', async (req, res) => {
 
 router.get('/game', async (req, res) => {
     try {
-        if(req.session.logged_in){
-            res.render('game', {logged_in: req.session.logged_in})
-        }else{
+        if (req.session.logged_in) {
+            res.render('game', { logged_in: req.session.logged_in })
+        } else {
             res.redirect('login')
         }
-        
+
     } catch (error) {
         res.status(500).json(error);
     }
 });
+
 
 module.exports = router;
