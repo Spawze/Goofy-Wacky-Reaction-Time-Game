@@ -6,7 +6,7 @@ This project is a reaction time game, how fast are you? This app tests your reac
 
 ### Deployed URL
 
-*insert link here*
+https://its-reaction-time.herokuapp.com/leaderboard
 
 ## Summary 
 ___________________________________
