@@ -38,13 +38,10 @@ router.get('/leaderboard', async (req, res) => {
         })
         //clean data
         const scoreData = scoreDataRaw.map((score) => score.get({ plain: true }))
-
-        //filter data, using the lodash library, to exclude duplicate user id's
+        //filter data, using the Lodash library, to exclude duplicate user id's
         const scoreDataFiltered = _.uniqBy(scoreData, 'user_id')
-        
-        //cut the filtered data to only have 5 entries
+        //cut the filtered data to only have 15 entries
         const scoreDataCut = scoreDataFiltered.slice(0, 15)
-
 
         res.render('leaderboard', { scoreData: scoreDataCut, logged_in: req.session.logged_in })
 
@@ -53,6 +50,7 @@ router.get('/leaderboard', async (req, res) => {
     }
 });
 
+//render game screen. Will redirect to login page if user isn't logged in.
 router.get('/game', async (req, res) => {
     try {
         if (req.session.logged_in) {

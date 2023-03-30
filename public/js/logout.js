@@ -1,5 +1,5 @@
-var logoutEl = $('#logout-button')
-
+var logoutEl = $('.logout-button')
+//logs user out and puts them on the home page
 function logout(){
     console.log("Eeeeeeeeeeeeeeeee")
     const response = $.post('/api/user/logout', (data)=>{
