@@ -12,6 +12,7 @@
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" />
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="./images/kill.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
@@ -20,10 +21,10 @@
   <nav>
     <div class="nav-wrapper">
       <a href="/" class="brand-logo">It's Reaction Time</a>
-       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         {{#if logged_in}}
-        <li><a id="logout-button">Log Out</a></li>
+        <li><a class="logout-button">Log Out</a></li>
         {{else}}
         <li><a href="/login">Log In</a></li>
         {{/if}}
@@ -31,42 +32,43 @@
       </ul>
     </div>
   </nav>
-    <ul class="sidenav" id="mobile-demo">
-        {{#if logged_in}}
-        <li><a id="logout-button">Log Out</a></li>
-        {{else}}
-        <li><a href="/login">Log In</a></li>
-        {{/if}}
-        <li><a href="#how-to-play" class=" btn modal-trigger">How To Play</a></li>
+  <ul class="sidenav" id="mobile-demo">
+    {{#if logged_in}}
+    <li><a class="logout-button">Log Out</a></li>
+    {{else}}
+    <li><a href="/login">Log In</a></li>
+    {{/if}}
+    <li><a href="#how-to-play" class=" btn modal-trigger">How To Play</a></li>
   </ul>
   <main>
     {{{body}}}
   </main>
 
+  {{!-- How to play modal --}}
   <div id="how-to-play" class="modal">
     <div class="modal-content">
-        <h4>HOW TO PLAY</h4>
-        <p>It's Reaction Time! Click "Start Game" to begin, once clicked, you'll be presented with
-            a red square. After you click start, the red square will turn green after a random amount of time, your goal is to click this square as soon
-            as it changes color.<br>
-            The game will log your reaction time - try to get the best score and submit it to the leaderboard!
-            Go on, it's time to play, good luck!
-        </p>
+      <h4>HOW TO PLAY</h4>
+      <p>It's Reaction Time! Click "Start Game" to begin, once clicked, you'll be presented with
+        a red square. After you click start, the red square will turn green after a random amount of time, your goal is
+        to click this square as soon
+        as it changes color.<br>
+        The game will log your reaction time - try to get the best score and submit it to the leaderboard!
+        Go on, it's time to play, good luck!
+      </p>
     </div>
     <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
     </div>
-</div>
+  </div>
 
   <!--JavaScript at end of body for optimized loading-->
   <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-  {{!-- <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script> --}}
-  <script src="/js/homepage.js"></script>
   <script type="text/javascript" src="/js/materialize.min.js"></script>
+  <script src="/js/homepage.js"></script>
   <script src="./js/game.js"></script>
   <script src="/js/logout.js"></script>
   <script src="./js/login.js"></script>
- 
+
 </body>
 
 </html>

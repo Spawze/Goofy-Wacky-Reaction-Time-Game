@@ -1,10 +1,11 @@
+//initialize all interactive dom elements
 const startButton = $('#game-start-button')
 const gameSquare = $('#red-square')
 const submitButton = $('#submit-button')
 const resetButton = $('#reset-button')
 const scoreEl = $('#score')
 const getReadyText = $('#get-ready')
-
+//initialize all game logic variables
 let gameStarted = false;
 let canClickSquare = false;
 let fault = false
@@ -12,7 +13,6 @@ let tooLate = false
 let startTime
 let clickTime
 let score
-
 
 function startGame() {
     
@@ -22,7 +22,6 @@ function startGame() {
     const randomDelay = (Math.floor(Math.random() * 6000)) + 2000
     gameStarted = true;
     setTimeout(() => {
-
         canClickSquare = true
         gameSquare.css('background-color', 'green')
         getReadyText.text("Click!")
@@ -33,8 +32,6 @@ function startGame() {
 }
 
 function squareClick() {
-
-
     if (gameStarted) {
         if (canClickSquare && !fault) {
 
@@ -59,12 +56,6 @@ function squareClick() {
             scoreEl.text("You clicked too early!")
         }
     }
-
-
-
-
-
-
 }
 
 function submitScore() {
@@ -86,7 +77,7 @@ function resetGame(){
     document.location.reload()
 }
 
-
+//initialize event listeners
 gameSquare.on('mousedown', squareClick)
 startButton.on('click', startGame)
 submitButton.on('click', submitScore)
