@@ -1,13 +1,16 @@
 <section class="container">
     <ul class="collection with-header blue-grey darken-1">
-        <li class="collection-header center">Leaderboard</li>
+        <li class="collection-header center">Leaderboard </li>
         {{#each scoreData as |score|}}
         {{> scoreboard-list}}
         {{/each}}
     </ul>
+    <div class="center-align">
+        <a href="/game" class="waves-effect waves-light btn-large">Replay<a href="/game"></a></a>
+    </div>
 </section>
-{{!-- 
- <div class="row-ta">
+{{!--
+<div class="row-ta">
     <div class="col s6">
         <div class="card blue-grey darken-1">
             <div class="card-content white-text">
@@ -18,4 +21,4 @@
             </div>
         </div>
     </div>
-</div>  --}}
+</div> --}}
