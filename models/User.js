@@ -22,6 +22,10 @@ User.init(
             allowNull: false,
             unique: true,
             validate: {
+                len: {
+                    args: [2, 13],
+                    msg: "Username is too long!"
+                },
                 isAlphanumeric: true
             }
         },
