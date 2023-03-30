@@ -34,12 +34,13 @@ body {
     width: 100vw;
 }
 
-#usernames, #scores {
+#usernames,
+#scores {
     color: white;
 }
 
 #leaderboard {
-    font-weight:600;
+    font-weight: 600;
 }
 
 .card {
@@ -52,8 +53,10 @@ body {
     border-radius: 15px;
 }
 
+
+
 @media only screen and (max-width: 450px) {
-    .login-card{
+    .login-card {
         margin: 25px;
     }
 }
@@ -91,7 +94,7 @@ body {
 
 .collection.with-header .collection-header {
     background-color: #00897b;
-    color: white; 
+    color: white;
     font-weight: bold;
     font-size: 40px;
 }
