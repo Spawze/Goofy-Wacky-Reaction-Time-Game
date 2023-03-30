@@ -24,7 +24,7 @@ User.init(
             validate: {
                 len: {
                     args: [2, 13],
-                    msg: "Username is too long!"
+                    msg: "Username is too short or too long!"
                 },
                 isAlphanumeric: true
             }
@@ -36,7 +36,7 @@ User.init(
             validate: {
                 isEmail: {
                     args: true,
-                    msg: "Invalid email"
+                    msg: "Invalid email!"
                 },
             },
         },
