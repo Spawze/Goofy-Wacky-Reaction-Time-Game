@@ -27,3 +27,71 @@ body {
 
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#D8BDBE", endColorstr="#028090", GradientType=1);
 }
+
+.row-ta {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+
+#usernames, #scores {
+    color: white;
+}
+
+#leaderboard {
+    font-weight:600;
+}
+
+.card {
+    border-radius: 15px;
+}
+
+.login-card {
+    margin: 100px;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+@media only screen and (max-width: 450px) {
+    .login-card{
+        margin: 25px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    #red-square {
+        top: 15% !important;
+        left: 10% !important;
+        width: 80% !important;
+        height: 30% !important;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    nav .brand-logo {
+
+        font-size: 24px !important;
+
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+    nav .brand-logo {
+        left: 42.5% !important;
+        font-size: 24px !important;
+
+    }
+}
+
+.collection .collection-item {
+    background-color: #26a69a;
+    font-size: 30px;
+}
+
+.collection.with-header .collection-header {
+    background-color: #00897b;
+    color: white; 
+    font-weight: bold;
+    font-size: 40px;
+}

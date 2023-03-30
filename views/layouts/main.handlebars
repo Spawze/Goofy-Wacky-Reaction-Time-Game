@@ -20,7 +20,8 @@
   <nav>
     <div class="nav-wrapper">
       <a href="/" class="brand-logo">It's Reaction Time</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
         {{#if logged_in}}
         <li><a id="logout-button">Log Out</a></li>
         {{else}}
@@ -30,7 +31,14 @@
       </ul>
     </div>
   </nav>
-
+    <ul class="sidenav" id="mobile-demo">
+        {{#if logged_in}}
+        <li><a id="logout-button">Log Out</a></li>
+        {{else}}
+        <li><a href="/login">Log In</a></li>
+        {{/if}}
+        <li><a href="#how-to-play" class=" btn modal-trigger">How To Play</a></li>
+  </ul>
   <main>
     {{{body}}}
 
