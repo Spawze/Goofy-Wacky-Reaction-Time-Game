@@ -1,4 +1,4 @@
-# Goofy Wacky Reaction Time!
+# It's Reaction Time!
 
 ## About
 ___________________________________
@@ -34,16 +34,25 @@ THEN my scores will appear
 
 
 
+## Main Menu
+______________________________________
+
+![Main Menu](/public/images/Main%20Menu.PNG)
+
+
 ## Login Screen
 ______________________________________
-*insert screenshot here*
+
+![Login Screen](/public/images/Login%20Screen.PNG)
 
 
 ## Game Screen
 _________________________________
-*insert screenshot*
+
+![Game Screen](/public/images/Game.PNG)
 
 
 ## Leaderboards
 _______________________________
-*insert screenshot*
+
+![Leaderboard](/public/images/Leaderboard.PNG)
